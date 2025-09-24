@@ -803,3 +803,168 @@ curl_cffi.requests.exceptions.Timeout: Failed to perform, curl: (28) Connection 
 [INFO] 2025-09-24 11:40:03,856 accounts.tasks - Updated AAPL: 254.43 (cached + DB)
 [INFO] 2025-09-24 11:40:04,574 accounts.tasks - Updated GOOGL: 251.66 (cached + DB)
 [INFO] 2025-09-24 11:40:05,324 accounts.tasks - Updated AMZN: 220.71 (cached + DB)
+[ERROR] 2025-09-24 11:50:30,077 accounts.tasks - Error fetching TSLA: Failed to perform, curl: (28) Connection timed out after 30002 milliseconds. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+Traceback (most recent call last):
+  File "/Users/mac/Documents/firstproject/.venv/lib/python3.11/site-packages/curl_cffi/requests/session.py", line 640, in request
+    c.perform()
+  File "/Users/mac/Documents/firstproject/.venv/lib/python3.11/site-packages/curl_cffi/curl.py", line 365, in perform
+    self._check_error(ret, "perform")
+  File "/Users/mac/Documents/firstproject/.venv/lib/python3.11/site-packages/curl_cffi/curl.py", line 187, in _check_error
+    raise error
+curl_cffi.curl.CurlError: Failed to perform, curl: (28) Connection timed out after 30002 milliseconds. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/mac/Documents/maryam attique folder/firstproject/core/accounts/tasks.py", line 108, in fetch_stock_prices
+    stock_data = yf.Ticker(ticker).info
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Documents/firstproject/.venv/lib/python3.11/site-packages/yfinance/ticker.py", line 163, in info
+    return self.get_info()
+           ^^^^^^^^^^^^^^^
+  File "/Users/mac/Documents/firstproject/.venv/lib/python3.11/site-packages/yfinance/base.py", line 329, in get_info
+    data = self._quote.info
+           ^^^^^^^^^^^^^^^^
+  File "/Users/mac/Documents/firstproject/.venv/lib/python3.11/site-packages/yfinance/scrapers/quote.py", line 511, in info
+    self._fetch_info()
+  File "/Users/mac/Documents/firstproject/.venv/lib/python3.11/site-packages/yfinance/scrapers/quote.py", line 610, in _fetch_info
+    result = self._fetch(modules=modules)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Documents/firstproject/.venv/lib/python3.11/site-packages/yfinance/scrapers/quote.py", line 590, in _fetch
+    result = self._data.get_raw_json(_QUOTE_SUMMARY_URL_ + f"/{self._symbol}", params=params_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Documents/firstproject/.venv/lib/python3.11/site-packages/yfinance/data.py", line 443, in get_raw_json
+    response = self.get(url, params=params, timeout=timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Documents/firstproject/.venv/lib/python3.11/site-packages/yfinance/utils.py", line 92, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Documents/firstproject/.venv/lib/python3.11/site-packages/yfinance/data.py", line 371, in get
+    response = self._make_request(url, request_method = self._session.get, params=params, timeout=timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Documents/firstproject/.venv/lib/python3.11/site-packages/yfinance/utils.py", line 92, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Documents/firstproject/.venv/lib/python3.11/site-packages/yfinance/data.py", line 417, in _make_request
+    response = request_method(**request_args)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Documents/firstproject/.venv/lib/python3.11/site-packages/curl_cffi/requests/session.py", line 661, in get
+    return self.request(method="GET", url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Documents/firstproject/.venv/lib/python3.11/site-packages/curl_cffi/requests/session.py", line 647, in request
+    raise error(str(e), e.code, rsp) from e
+curl_cffi.requests.exceptions.Timeout: Failed to perform, curl: (28) Connection timed out after 30002 milliseconds. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+[ERROR] 2025-09-24 11:51:00,098 accounts.tasks - Error fetching MSFT: Failed to perform, curl: (28) Connection timed out after 30002 milliseconds. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+Traceback (most recent call last):
+  File "/Users/mac/Documents/firstproject/.venv/lib/python3.11/site-packages/curl_cffi/requests/session.py", line 640, in request
+    c.perform()
+  File "/Users/mac/Documents/firstproject/.venv/lib/python3.11/site-packages/curl_cffi/curl.py", line 365, in perform
+    self._check_error(ret, "perform")
+  File "/Users/mac/Documents/firstproject/.venv/lib/python3.11/site-packages/curl_cffi/curl.py", line 187, in _check_error
+    raise error
+curl_cffi.curl.CurlError: Failed to perform, curl: (28) Connection timed out after 30002 milliseconds. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/mac/Documents/maryam attique folder/firstproject/core/accounts/tasks.py", line 108, in fetch_stock_prices
+    stock_data = yf.Ticker(ticker).info
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Documents/firstproject/.venv/lib/python3.11/site-packages/yfinance/ticker.py", line 163, in info
+    return self.get_info()
+           ^^^^^^^^^^^^^^^
+  File "/Users/mac/Documents/firstproject/.venv/lib/python3.11/site-packages/yfinance/base.py", line 329, in get_info
+    data = self._quote.info
+           ^^^^^^^^^^^^^^^^
+  File "/Users/mac/Documents/firstproject/.venv/lib/python3.11/site-packages/yfinance/scrapers/quote.py", line 511, in info
+    self._fetch_info()
+  File "/Users/mac/Documents/firstproject/.venv/lib/python3.11/site-packages/yfinance/scrapers/quote.py", line 610, in _fetch_info
+    result = self._fetch(modules=modules)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Documents/firstproject/.venv/lib/python3.11/site-packages/yfinance/scrapers/quote.py", line 590, in _fetch
+    result = self._data.get_raw_json(_QUOTE_SUMMARY_URL_ + f"/{self._symbol}", params=params_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Documents/firstproject/.venv/lib/python3.11/site-packages/yfinance/data.py", line 443, in get_raw_json
+    response = self.get(url, params=params, timeout=timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Documents/firstproject/.venv/lib/python3.11/site-packages/yfinance/utils.py", line 92, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Documents/firstproject/.venv/lib/python3.11/site-packages/yfinance/data.py", line 371, in get
+    response = self._make_request(url, request_method = self._session.get, params=params, timeout=timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Documents/firstproject/.venv/lib/python3.11/site-packages/yfinance/utils.py", line 92, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Documents/firstproject/.venv/lib/python3.11/site-packages/yfinance/data.py", line 417, in _make_request
+    response = request_method(**request_args)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Documents/firstproject/.venv/lib/python3.11/site-packages/curl_cffi/requests/session.py", line 661, in get
+    return self.request(method="GET", url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Documents/firstproject/.venv/lib/python3.11/site-packages/curl_cffi/requests/session.py", line 647, in request
+    raise error(str(e), e.code, rsp) from e
+curl_cffi.requests.exceptions.Timeout: Failed to perform, curl: (28) Connection timed out after 30002 milliseconds. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+[INFO] 2025-09-24 11:51:25,356 accounts.tasks - Updated AAPL: 254.43 (cached + DB)
+[INFO] 2025-09-24 11:51:26,170 accounts.tasks - Updated GOOGL: 251.66 (cached + DB)
+[INFO] 2025-09-24 11:51:26,890 accounts.tasks - Updated AMZN: 220.71 (cached + DB)
+[INFO] 2025-09-24 12:00:13,468 accounts.tasks - Updated TSLA: 425.85 (cached + DB)
+[INFO] 2025-09-24 12:00:14,161 accounts.tasks - Updated MSFT: 509.23 (cached + DB)
+[INFO] 2025-09-24 12:00:14,881 accounts.tasks - Updated AAPL: 254.43 (cached + DB)
+[INFO] 2025-09-24 12:00:15,637 accounts.tasks - Updated GOOGL: 251.66 (cached + DB)
+[INFO] 2025-09-24 12:00:16,338 accounts.tasks - Updated AMZN: 220.71 (cached + DB)
+[ERROR] 2025-09-24 12:10:35,291 accounts.tasks - Error fetching TSLA: Failed to perform, curl: (28) Connection timed out after 30001 milliseconds. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+Traceback (most recent call last):
+  File "/Users/mac/Documents/firstproject/.venv/lib/python3.11/site-packages/curl_cffi/requests/session.py", line 640, in request
+    c.perform()
+  File "/Users/mac/Documents/firstproject/.venv/lib/python3.11/site-packages/curl_cffi/curl.py", line 365, in perform
+    self._check_error(ret, "perform")
+  File "/Users/mac/Documents/firstproject/.venv/lib/python3.11/site-packages/curl_cffi/curl.py", line 187, in _check_error
+    raise error
+curl_cffi.curl.CurlError: Failed to perform, curl: (28) Connection timed out after 30001 milliseconds. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/mac/Documents/maryam attique folder/firstproject/core/accounts/tasks.py", line 108, in fetch_stock_prices
+    stock_data = yf.Ticker(ticker).info
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Documents/firstproject/.venv/lib/python3.11/site-packages/yfinance/ticker.py", line 163, in info
+    return self.get_info()
+           ^^^^^^^^^^^^^^^
+  File "/Users/mac/Documents/firstproject/.venv/lib/python3.11/site-packages/yfinance/base.py", line 329, in get_info
+    data = self._quote.info
+           ^^^^^^^^^^^^^^^^
+  File "/Users/mac/Documents/firstproject/.venv/lib/python3.11/site-packages/yfinance/scrapers/quote.py", line 511, in info
+    self._fetch_info()
+  File "/Users/mac/Documents/firstproject/.venv/lib/python3.11/site-packages/yfinance/scrapers/quote.py", line 611, in _fetch_info
+    additional_info = self._fetch_additional_info()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Documents/firstproject/.venv/lib/python3.11/site-packages/yfinance/scrapers/quote.py", line 599, in _fetch_additional_info
+    result = self._data.get_raw_json(f"{_QUERY1_URL_}/v7/finance/quote?", params=params_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Documents/firstproject/.venv/lib/python3.11/site-packages/yfinance/data.py", line 443, in get_raw_json
+    response = self.get(url, params=params, timeout=timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Documents/firstproject/.venv/lib/python3.11/site-packages/yfinance/utils.py", line 92, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Documents/firstproject/.venv/lib/python3.11/site-packages/yfinance/data.py", line 371, in get
+    response = self._make_request(url, request_method = self._session.get, params=params, timeout=timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Documents/firstproject/.venv/lib/python3.11/site-packages/yfinance/utils.py", line 92, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Documents/firstproject/.venv/lib/python3.11/site-packages/yfinance/data.py", line 417, in _make_request
+    response = request_method(**request_args)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Documents/firstproject/.venv/lib/python3.11/site-packages/curl_cffi/requests/session.py", line 661, in get
+    return self.request(method="GET", url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Documents/firstproject/.venv/lib/python3.11/site-packages/curl_cffi/requests/session.py", line 647, in request
+    raise error(str(e), e.code, rsp) from e
+curl_cffi.requests.exceptions.Timeout: Failed to perform, curl: (28) Connection timed out after 30001 milliseconds. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+[INFO] 2025-09-24 12:10:47,830 accounts.tasks - Updated MSFT: 509.23 (cached + DB)
+[INFO] 2025-09-24 12:10:48,516 accounts.tasks - Updated AAPL: 254.43 (cached + DB)
+[INFO] 2025-09-24 12:10:49,222 accounts.tasks - Updated GOOGL: 251.66 (cached + DB)
+[INFO] 2025-09-24 12:10:50,477 accounts.tasks - Updated AMZN: 220.71 (cached + DB)
